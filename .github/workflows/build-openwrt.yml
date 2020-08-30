@@ -146,7 +146,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: OpenWrt_config
-        path: openwrt/.config
+        path: /workdir/openwrt/.config
 
     - name: Upload firmware to cowtransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
