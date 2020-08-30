@@ -161,3 +161,12 @@ jobs:
         curl -fsSL git.io/file-transfer | sh
         ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
+
+    - name: 通知
+      env:
+        SCKEY: ${{secrets.SCKEY}}
+      run: |
+        send_title="云编译完成"
+        send_content="云编译完成。"
+        markdown_splitline="%0D%0A%0D%0A---%0D%0A%0D%0A"
+        curl -s "http://sc.ftqq.com/${SCKEY}.send?text=${send_title}" -d "&desp=${markdown_splitline}${send_content}"
