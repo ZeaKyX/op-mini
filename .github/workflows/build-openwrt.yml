@@ -93,7 +93,7 @@ jobs:
         #SCKEY: ${{secrets.SCKEY}}
         SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
       uses: ZeaKyX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh') || github.event_name == 'started'
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh') || github.event_name == 'watch'
 
     - name: Download package
       id: package
