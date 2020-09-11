@@ -31,7 +31,7 @@ env:
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -93,7 +93,7 @@ jobs:
         #SCKEY: ${{secrets.SCKEY}}
         SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
       uses: ZeaKyX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh') || github.event_name == 'started'
 
     - name: Download package
       id: package
