@@ -10,9 +10,9 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-rm -rf package/lean/UnblockNeteaseMusic
-rm -rf package/lean/UnblockNeteaseMusicGo
-git clone https://github.com/cnsilvan/luci-app-unblockneteasemusic.git package/openwrt-packages/luci-app-unblockneteasemusic
+#rm -rf package/lean/UnblockNeteaseMusic
+#rm -rf package/lean/UnblockNeteaseMusicGo
+#git clone https://github.com/cnsilvan/luci-app-unblockneteasemusic.git package/openwrt-packages/luci-app-unblockneteasemusic
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
