@@ -167,7 +167,7 @@ jobs:
       env:
         SCKEY: ${{secrets.SCKEY}}
       run: |
-        send_title="云编译完成"
-        send_content="云编译完成。"
+        send_title="y1云编译完成"
+        send_content="y1云编译完成。"
         markdown_splitline="%0D%0A%0D%0A---%0D%0A%0D%0A"
         curl -s "http://sc.ftqq.com/${SCKEY}.send?text=${send_title}" -d "&desp=${markdown_splitline}${send_content}"
